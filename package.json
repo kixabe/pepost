@@ -2,7 +2,10 @@
   "name": "@kixabe/pepost",
   "version": "1.0.0",
   "scripts": {},
-  "dependencies": {},
+  "dependencies": {
+    "fast-xml-parser": "^3.16.0",
+    "got": "^11.0.2"
+  },
   "devDependencies": {},
   "engines": {
     "node": "12.x"
