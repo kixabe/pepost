@@ -1,0 +1,11 @@
+{
+  "name": "@kixabe/pepost",
+  "version": "1.0.0",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": "12.x"
+  },
+  "private": true
+}
