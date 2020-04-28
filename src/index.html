@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PEPost · Kixabe</title>
+    <link rel="icon" href="https://kixabe.com/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body class="section is-flex has-text-centered">
+    <main class="container is-fluid" v-cloak>
+      <h1 class="title">Seguimiento Serpost</h1>
+      <h2 class="subtitle">{{info?'Detalle':'Hacer'}} seguimiento</h2>
+      <br />
+      <div class="columns" v-if="!info">
+        <div class="column is-6 is-offset-3 is-paddingless">
+          <article class="message is-danger" v-if="error">
+            <div class="message-body">{{error}}</div>
+          </article>
+          <form
+            class="field has-addons has-addons-centered"
+            @submit.prevent="track"
+          >
+            <div class="control is-expanded">
+              <input
+                required
+                minlength="13"
+                maxlength="13"
+                pattern="[A-Z]{2}\d{9}[A-Z]{2}"
+                placeholder="Número de seguimiento"
+                class="input has-text-centered"
+                ref="id"
+                v-model="id"
+                :disabled="loading"
+              />
+            </div>
+            <div class="control">
+              <button
+                class="button is-link"
+                :disabled="loading"
+                :class="{'is-loading':loading}"
+              >
+                BUSCAR
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div v-else>
+        <button class="button is-link" @click="info=null">VOLVER</button>
+        <br /><br />
+        <div class="table-container">
+          <table class="table is-narrow is-bordered is-hoverable">
+            <tbody>
+              <tr>
+                <th rowspan="3">ENVÍO</th>
+                <th>NÚMERO</th>
+                <td>{{info.id}}</td>
+              </tr>
+              <tr>
+                <th>ORIGEN</th>
+                <td>{{info.origin}}</td>
+              </tr>
+              <tr>
+                <th>DESTINO</th>
+                <td>{{info.destination}}</td>
+              </tr>
+              <tr>
+                <th rowspan="3">ENTREGA</th>
+                <th>FECHA</th>
+                <td>{{info.delivered|date}}</td>
+              </tr>
+              <tr>
+                <th>DESTINATARIO</th>
+                <td>{{info.recipient||'-'}}</td>
+              </tr>
+              <tr>
+                <th>DOCUMENTO</th>
+                <td>{{info.document||'-'}}</td>
+              </tr>
+              <tr v-for="(item,i) in info.history">
+                <th v-if="!i" :rowspan="info.history.length">HISTORIAL</th>
+                <td>{{item.date|date}}</td>
+                <td>{{item.description}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+    <footer class="container">
+      © 2020 <a href="https://kixabe.com">Kixabe</a>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+html {
+  height: 100%;
+  overflow-y: auto;
+}
+body {
+  min-height: 100%;
+  flex-direction: column;
+}
+[v-cloak] {
+  display: none;
+}
+
+table {
+  margin: 0 auto;
+}
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+footer.container {
+  flex-grow: 0;
+  margin-top: 3rem;
+}
+.columns:last-child {
+  margin-bottom: 0;
+}
