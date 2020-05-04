@@ -1,0 +1,24 @@
+{
+  "js": {
+    "dangerousForOf": true
+  },
+  "css": {
+    "level": 2
+  },
+  "html": {
+    "caseSensitive": true,
+    "collapseBooleanAttributes": true,
+    "collapseWhitespace": true,
+    "decodeEntities": true,
+    "minifyCSS": true,
+    "minifyJS": true,
+    "removeAttributeQuotes": true,
+    "removeComments": true,
+    "removeEmptyAttributes": true,
+    "removeOptionalTags": true,
+    "removeRedundantAttributes": true,
+    "removeScriptTypeAttributes": true,
+    "removeStyleLinkTypeAttributes": true,
+    "useShortDoctype": true
+  }
+}

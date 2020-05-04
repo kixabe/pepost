@@ -1,12 +1,20 @@
 {
   "name": "@kixabe/pepost",
   "version": "1.0.0",
-  "scripts": {},
+  "scripts": {
+    "build": "node scripts/build"
+  },
   "dependencies": {
     "fast-xml-parser": "^3.16.0",
     "got": "^11.0.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "buble": "^0.20.0",
+    "clean-css": "^4.2.3",
+    "fs-extra": "^9.0.0",
+    "html-minifier": "^4.0.0",
+    "uglify-js": "^3.9.2"
+  },
   "engines": {
     "node": "12.x"
   },
