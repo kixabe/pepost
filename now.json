@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "github": {
+    "silent": true
+  },
+  "env": {
+    "TOKEN": "@pepost-token",
+    "CLIENT": "@pepost-client"
+  }
+}
